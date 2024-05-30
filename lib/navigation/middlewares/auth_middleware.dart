@@ -13,7 +13,6 @@ class AuthMiddleware extends GetMiddleware {
     debugPrint("authState: ${_authManager.authState}");
 
     switch (_authManager.authState) {
-      // TODO optional: if first time app open, we can show an onboarding page before login page.
       case AuthState.none:
       case AuthState.loginRequired:
         return RouteSettings(name: Routes.login.path);

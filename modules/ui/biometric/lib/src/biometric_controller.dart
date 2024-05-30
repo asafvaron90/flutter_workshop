@@ -17,6 +17,7 @@ class BiometricController extends GetxController {
     final success = await _authManager.biometricAccessRequest();
     if (success) {
       await Get.offAllNamed(Routes.home.path);
+      return;
     }
 
     // change back the state & display some error
